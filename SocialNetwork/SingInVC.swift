@@ -10,6 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SingInVC: UIViewController {
     @IBOutlet weak var emailField: FancyFieid!
@@ -17,7 +18,15 @@ class SingInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID){
+            print("ID found in keychain")
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +62,9 @@ class SingInVC: UIViewController {
             }
             else {
                 print("Successfully with Firebase")
+                if let user = user {
+                    self.completeSingIN(id: user.uid)
+                }
             }
         })
     }
@@ -62,6 +74,9 @@ class SingInVC: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     print("Succesfully to login Firebase")
+                    if let user = user {
+                        self.completeSingIN(id: user.uid)
+                    }
                 }
                 else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
@@ -70,12 +85,22 @@ class SingInVC: UIViewController {
                         }
                         else{
                             print("Successfully to login Firebase")
+                            if let user = user {
+                                self.completeSingIN(id: user.uid)
+                            }
                         }
                     })
                 }
             })
         }
         
+    }
+    
+    func completeSingIN(id : String){
+        let keychainResuit: Bool = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("saved to keychain: \(keychainResuit)")
+        
+        performSegue(withIdentifier: "goToFeed", sender: nil)
     }
     
 }
