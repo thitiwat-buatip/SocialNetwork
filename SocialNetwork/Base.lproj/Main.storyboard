@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +21,111 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nrD-Mq-KSc" customClass="FancyView" customModule="SocialNetwork" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo_Dota_2" translatesAutoresizingMaskIntoConstraints="NO" id="DoU-vk-ZD0">
+                                        <rect key="frame" x="8" y="8" width="304" height="134"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.77647058823529413" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Oar-t9-0xp"/>
+                                    <constraint firstAttribute="bottom" secondItem="DoU-vk-ZD0" secondAttribute="bottom" constant="8" id="eIu-f8-ab8"/>
+                                    <constraint firstItem="DoU-vk-ZD0" firstAttribute="leading" secondItem="nrD-Mq-KSc" secondAttribute="leading" constant="8" id="kQg-PT-AA3"/>
+                                    <constraint firstItem="DoU-vk-ZD0" firstAttribute="top" secondItem="nrD-Mq-KSc" secondAttribute="top" constant="8" id="tzw-pb-f6s"/>
+                                    <constraint firstAttribute="trailing" secondItem="DoU-vk-ZD0" secondAttribute="trailing" constant="8" id="vRv-KD-uWe"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUP-B5-pkg">
+                                <rect key="frame" x="0.0" y="488" width="320" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you haven't signed in before, an account will be automatically created for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSL-D2-vy2">
+                                        <rect key="frame" x="8" y="8" width="304" height="64"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.67450980392156867" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="jSL-D2-vy2" firstAttribute="leading" secondItem="pUP-B5-pkg" secondAttribute="leading" constant="8" id="FDd-4H-ruK"/>
+                                    <constraint firstAttribute="trailing" secondItem="jSL-D2-vy2" secondAttribute="trailing" constant="8" id="cgD-Xf-6do"/>
+                                    <constraint firstAttribute="height" constant="80" id="hX4-b7-fjm"/>
+                                    <constraint firstAttribute="bottom" secondItem="jSL-D2-vy2" secondAttribute="bottom" constant="8" id="ix4-7o-lCx"/>
+                                    <constraint firstItem="jSL-D2-vy2" firstAttribute="top" secondItem="pUP-B5-pkg" secondAttribute="top" constant="8" id="jap-yV-XvG"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tjM-A0-rEt">
+                                <rect key="frame" x="36" y="353" width="248" height="94"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GIQ-co-MCK" customClass="FancyFieid" customModule="SocialNetwork" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="17"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fHZ-0V-Cqc" customClass="FancyFieid" customModule="SocialNetwork" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="32" width="248" height="17"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO9-OR-O9l" customClass="FancyBtn" customModule="SocialNetwork" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="248" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WES-iK-Jgw" customClass="RoundBtn" customModule="SocialNetwork" customModuleProvider="target">
+                                <rect key="frame" x="110" y="213" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="MC9-xW-FdC"/>
+                                    <constraint firstAttribute="width" constant="100" id="n9R-hU-tmZ"/>
+                                </constraints>
+                                <state key="normal" image="fb-art"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a sign in method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXF-wu-IU9">
+                                <rect key="frame" x="16" y="158" width="288" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="yy9-iq-OaZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tjM-A0-rEt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="2Ri-34-VDF"/>
+                            <constraint firstItem="nrD-Mq-KSc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2UO-Kf-xiJ"/>
+                            <constraint firstItem="pUP-B5-pkg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="91b-R2-3eZ"/>
+                            <constraint firstItem="WES-iK-Jgw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="94" id="F3x-cH-u0v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WES-iK-Jgw" secondAttribute="trailing" constant="94" id="MHo-d5-5r3"/>
+                            <constraint firstItem="hXF-wu-IU9" firstAttribute="top" secondItem="nrD-Mq-KSc" secondAttribute="bottom" constant="8" id="OsJ-TP-ReW"/>
+                            <constraint firstItem="hXF-wu-IU9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="U59-ME-cIY"/>
+                            <constraint firstItem="tjM-A0-rEt" firstAttribute="top" secondItem="WES-iK-Jgw" secondAttribute="bottom" constant="40" id="UrH-r2-rQC"/>
+                            <constraint firstItem="WES-iK-Jgw" firstAttribute="top" secondItem="hXF-wu-IU9" secondAttribute="bottom" constant="30" id="WRV-CL-C4L"/>
+                            <constraint firstAttribute="trailing" secondItem="pUP-B5-pkg" secondAttribute="trailing" id="YRI-Sj-ylE"/>
+                            <constraint firstAttribute="trailing" secondItem="nrD-Mq-KSc" secondAttribute="trailing" id="sqn-Vy-JF3"/>
+                            <constraint firstItem="hXF-wu-IU9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="u1D-uL-5MN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tjM-A0-rEt" secondAttribute="trailing" constant="20" id="yVf-yh-kC4"/>
+                            <constraint firstItem="nrD-Mq-KSc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zBf-8v-vMj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pUP-B5-pkg" secondAttribute="bottom" id="zVy-Zz-Xo5"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="31.875" y="68.661971830985919"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo_Dota_2" width="1599" height="328"/>
+        <image name="fb-art" width="250" height="250"/>
+    </resources>
 </document>
