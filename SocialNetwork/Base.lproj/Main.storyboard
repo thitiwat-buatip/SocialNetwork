@@ -88,6 +88,9 @@
                                     <constraint firstAttribute="width" constant="100" id="n9R-hU-tmZ"/>
                                 </constraints>
                                 <state key="normal" image="fb-art"/>
+                                <connections>
+                                    <action selector="facebookTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2L-w4-peW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a sign in method" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXF-wu-IU9">
                                 <rect key="frame" x="16" y="158" width="288" height="25"/>
