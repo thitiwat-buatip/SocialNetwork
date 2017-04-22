@@ -14,6 +14,8 @@
 		407FCA321EAA54C3000A0260 /* FancyBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407FCA311EAA54C3000A0260 /* FancyBtn.swift */; };
 		4080B2AC1EAA70970044C843 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4080B2AB1EAA70970044C843 /* FeedVC.swift */; };
 		4080B2AE1EAA79F10044C843 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4080B2AD1EAA79F10044C843 /* CircleView.swift */; };
+		4080B2B21EAA84B80044C843 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4080B2B11EAA84B80044C843 /* PostCell.swift */; };
+		40F095971EAB255800C4112D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F095961EAB255800C4112D /* DataService.swift */; };
 		40FE52C41EAA3A0400A889A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FE52C31EAA3A0400A889A0 /* AppDelegate.swift */; };
 		40FE52C61EAA3A0400A889A0 /* SingInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FE52C51EAA3A0400A889A0 /* SingInVC.swift */; };
 		40FE52C91EAA3A0400A889A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40FE52C71EAA3A0400A889A0 /* Main.storyboard */; };
@@ -33,7 +35,9 @@
 		407FCA311EAA54C3000A0260 /* FancyBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyBtn.swift; sourceTree = "<group>"; };
 		4080B2AB1EAA70970044C843 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		4080B2AD1EAA79F10044C843 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		4080B2B11EAA84B80044C843 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		40BA734C1EAA604700BAAA2B /* SocialNetwork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialNetwork.entitlements; sourceTree = "<group>"; };
+		40F095961EAB255800C4112D /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		40FE52C01EAA3A0400A889A0 /* SocialNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40FE52C31EAA3A0400A889A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40FE52C51EAA3A0400A889A0 /* SingInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInVC.swift; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 				407FCA2F1EAA52D6000A0260 /* FancyFieid.swift */,
 				407FCA311EAA54C3000A0260 /* FancyBtn.swift */,
 				4080B2AD1EAA79F10044C843 /* CircleView.swift */,
+				4080B2B11EAA84B80044C843 /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -91,6 +96,14 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		40F095951EAB253F00C4112D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				40F095961EAB255800C4112D /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		40FE52B71EAA3A0400A889A0 = {
@@ -114,6 +127,7 @@
 		40FE52C21EAA3A0400A889A0 /* SocialNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				40F095951EAB253F00C4112D /* Services */,
 				40BA734C1EAA604700BAAA2B /* SocialNetwork.entitlements */,
 				407FCA2A1EAA5032000A0260 /* Util */,
 				40A4894D1EAA3FD000DC386D /* Model */,
@@ -281,10 +295,12 @@
 				407FCA2E1EAA5191000A0260 /* RoundBtn.swift in Sources */,
 				40FE52C41EAA3A0400A889A0 /* AppDelegate.swift in Sources */,
 				407FCA301EAA52D6000A0260 /* FancyFieid.swift in Sources */,
+				40F095971EAB255800C4112D /* DataService.swift in Sources */,
 				4080B2AC1EAA70970044C843 /* FeedVC.swift in Sources */,
 				407FCA291EAA4FD6000A0260 /* FancyView.swift in Sources */,
 				407FCA2C1EAA5045000A0260 /* Constants.swift in Sources */,
 				407FCA321EAA54C3000A0260 /* FancyBtn.swift in Sources */,
+				4080B2B21EAA84B80044C843 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

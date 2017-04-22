@@ -63,7 +63,8 @@ class SingInVC: UIViewController {
             else {
                 print("Successfully with Firebase")
                 if let user = user {
-                    self.completeSingIN(id: user.uid)
+                    let userData = ["provider": credential.provider]
+                    self.completeSingIN(id: user.uid, userData: userData )
                 }
             }
         })
@@ -75,7 +76,8 @@ class SingInVC: UIViewController {
                 if error == nil {
                     print("Succesfully to login Firebase")
                     if let user = user {
-                        self.completeSingIN(id: user.uid)
+                        let userData = ["provider": user.providerID]
+                        self.completeSingIN(id: user.uid, userData: userData )
                     }
                 }
                 else {
@@ -86,7 +88,8 @@ class SingInVC: UIViewController {
                         else{
                             print("Successfully to login Firebase")
                             if let user = user {
-                                self.completeSingIN(id: user.uid)
+                                let userData = ["provider": user.providerID]
+                                self.completeSingIN(id: user.uid, userData: userData )
                             }
                         }
                     })
@@ -96,10 +99,10 @@ class SingInVC: UIViewController {
         
     }
     
-    func completeSingIN(id : String){
+    func completeSingIN(id : String, userData: Dictionary<String, String>){
+        DataService.ds.createFirebaseDBUSER(uid: id, userData: userData)
         let keychainResuit: Bool = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("saved to keychain: \(keychainResuit)")
-        
         performSegue(withIdentifier: "goToFeed", sender: nil)
     }
     
